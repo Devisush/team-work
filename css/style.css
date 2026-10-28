@@ -214,3 +214,140 @@ a {
         max-width: 300px;
     }
 }
+
+/* ==========================================================================
+   6. СТИЛИ ДЛЯ СТРАНИЦЫ БРОНИРОВАНИЯ (BOOKING.HTML)
+   ========================================================================== */
+
+/* Фоновое изображение специально для страницы бронирования */
+.booking-page {
+    background: linear-gradient(rgba(27, 67, 50, 0.45), rgba(45, 106, 79, 0.35)),
+                url('https://unsplash.com') no-repeat center center/cover;
+}
+
+/* Контейнер-отступ для контента */
+.booking-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 140px 20px 60px 20px; /* Большой верхний паддинг, чтобы шапка не перекрывала форму */
+}
+
+/* Карточка формы с эффектом Glassmorphism */
+.booking-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 40px 45px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 20px 50px rgba(11, 37, 26, 0.25);
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.booking-card h2 {
+    color: #1b4332;
+    font-size: clamp(24px, 4vw, 32px);
+    text-align: center;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.booking-card .subtitle {
+    text-align: center;
+    color: #526359;
+    font-size: 14px;
+    margin-bottom: 35px;
+    font-weight: 400;
+}
+
+/* Сетка самой формы */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* Двойные строки ввода (дата заезда/выезда и гости/телефон) */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+/* Элегантные подписи к полям */
+.form-group label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2c3e35;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-left: 4px;
+}
+
+/* Инпуты и селекты */
+.form-group input,
+.form-group select {
+    padding: 15px 18px;
+    border: 1px solid rgba(40, 106, 79, 0.2);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #1b4332;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Убираем дефолтную стрелочку в кастомных селектах для красоты (опционально) */
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%232d6a4f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+/* Интерактивные состояния фокуса */
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #40916c;
+    box-shadow: 0 0 0 4px rgba(82, 183, 136, 0.25);
+    background: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Кнопка на всю ширину карточки */
+.btn-block {
+    width: 100%;
+    margin-top: 10px;
+    padding: 16px;
+}
+
+/* Стили для сообщения об успешном бронировании */
+.success-message {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Адаптивность для средних и маленьких экранов */
+@media (max-width: 600px) {
+    .booking-card {
+        padding: 30px 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 22px;
+    }
+}
