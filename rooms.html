@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши Дома | GreenWood</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Локальные стили для страницы комнат */
+        .rooms-section { padding: 120px 5% 60px; }
+        .section-title { text-align: center; color: var(--primary-green); font-size: 2.5rem; margin-bottom: 40px; }
+        .rooms-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .room-card { background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .room-card:hover { transform: translateY(-5px); }
+        .room-img { width: 100%; height: 220px; object-fit: cover; }
+        .room-info { padding: 25px; }
+        .room-info h3 { color: var(--primary-green); margin-bottom: 10px; font-size: 1.4rem; }
+        .room-desc { color: #556b61; font-size: 0.95rem; margin-bottom: 20px; }
+        .room-meta { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e5ece9; padding-top: 15px; }
+        .room-price { font-weight: 700; color: var(--primary-green); }
+        .room-price span { color: var(--accent-gold); }
+    </style>
+</head>
+<body>
+
+    <header class="header" style="position: fixed; background: rgba(45, 74, 62, 0.95); backdrop-filter: blur(5px);">
+        <div class="logo">🌲 Green<span>Wood</span></div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="rooms.html" class="active">Наши Дома</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="booking.html">Бронирование</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="rooms-section">
+        <h2 class="section-title">Выберите свое идеальное убежище</h2>
+        
+        <div class="rooms-grid">
+            <!-- Карточка 1 -->
+            <div class="room-card">
+                <img src="https://unsplash.com" alt="Дом Сканди" class="room-img">
+                <div class="room-info">
+                    <h3>Сканди Глэмпинг</h3>
+                    <p class="room-desc">Минималистичный интерьер с панорамными окнами на вековой бор. Идеально для уединенного отдыха семейной пары.</p>
+                    <div class="room-meta">
+                        <p class="room-price">от 7 500 ₽ / <span>ночь</span></p>
+                        <a href="booking.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">Выбрать</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="room-card">
+                <img src="https://unsplash.com" alt="Дом Гнездо" class="room-img">
+                <div class="room-info">
+                    <h3>Дом «Гнездо Ястреба»</h3>
+                    <p class="room-desc">Расположен на высоте 6 метров над землей. Просторная терраса, подвесная сетка-гамак и личный телескоп для наблюдения за звездами.</p>
+                    <div class="room-meta">
+                        <p class="room-price">от 11 000 ₽ / <span>ночь</span></p>
+                        <a href="booking.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">Выбрать</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="room-card">
+                <img src="https://unsplash.com" alt="Лесное Шале" class="room-img">
+                <div class="room-info">
+                    <h3>Family Лесное Шале</h3>
+                    <p class="room-desc">Двухэтажный деревянный коттедж со всеми удобствами, камином на дровах и персональной купелью фурако на открытом воздухе.</p>
+                    <div class="room-meta">
+                        <p class="room-price">от 15 000 ₽ / <span>ночь</span></p>
+                        <a href="booking.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">Выбрать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
