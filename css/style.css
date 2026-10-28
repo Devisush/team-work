@@ -1,0 +1,216 @@
+/* ==========================================================================
+   1. СБРОС СТИЛЕЙ И БАЗОВЫЕ НАСТРОЙКИ
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #2C3E35; /* Темно-хвойный цвет текста */
+    background-color: #F4F6F4; /* Мягкий светлый эко-фон */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================================================================
+   2. ШАПКА САЙТА (HEADER)
+   ========================================================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    z-index: 1000;
+    /* Эффект матового стекла (Glassmorphism) */
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1b4332; /* Глубокий зеленый */
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #52b788; /* Светлый зеленый акцент */
+    font-weight: 300;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    font-weight: 600;
+    font-size: 15px;
+    color: #40514e;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+/* Анимация подчеркивания при наведении */
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #2d6a4f;
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #2d6a4f;
+}
+
+/* ==========================================================================
+   3. ГЛАВНЫЙ ЭКРАН (HERO SECTION)
+   ========================================================================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    position: relative;
+    /* Атмосферный градиент. Замени URL на реальное фото леса, когда оно появится */
+    background: linear-gradient(rgba(27, 67, 50, 0.7), rgba(45, 106, 79, 0.5)),
+                url('https://unsplash.com') no-repeat center center/cover;
+    text-align: center;
+}
+
+.hero-container {
+    max-width: 800px;
+    color: #ffffff;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 56px); /* Адаптивный размер шрифта */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 300;
+    margin-bottom: 40px;
+    opacity: 0.95;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   4. КНОПКИ (BUTTONS)
+   ========================================================================== */
+.actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    background-color: #52b788;
+    color: #ffffff;
+    border: 2px solid #52b788;
+}
+
+.btn-primary:hover {
+    background-color: #40916c;
+    border-color: #40916c;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(82, 183, 136, 0.4);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    backdrop-filter: blur(5px);
+}
+
+.btn-secondary:hover {
+    background-color: #ffffff;
+    color: #1b4332;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   5. АНИМАЦИИ И АДАПТИВНОСТЬ
+   ========================================================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптив под мобильные устройства */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+    }
+
+    .hero {
+        padding-top: 100px; /* Чтобы шапка не перекрывала контент на мобилках */
+    }
+
+    .btn {
+        width: 100%; /* Кнопки на весь экран на смартфонах */
+        max-width: 300px;
+    }
+}
