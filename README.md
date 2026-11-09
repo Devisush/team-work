@@ -44,7 +44,4 @@ gitGraph
     checkout main
     merge develop tag: "v1.0-release"
 ```
-<<<<<<< HEAD
->>>>>>> develop
-=======
->>>>>>> 2cefbea61d01bc2bfec4aa0512d4a4738ea33ef8
+
